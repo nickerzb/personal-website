@@ -1,0 +1,38 @@
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.align-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+// .padding-10 {
+//   padding: 10px;
+// }
+
+.space-top-lg {
+  padding-top: 20px;
+}
+
+.space-top-md {
+  padding-top: 10px;
+}
+
+.space-top-sm {
+  padding-top: 5px;
+}
+
+.title {
+  font-weight: 500;
+}
+
+.no-bottom-margin {
+  margin-bottom: 0px;
+}

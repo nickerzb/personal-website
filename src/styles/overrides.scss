@@ -1,0 +1,27 @@
+@import "variables";
+
+.navbar {
+  background-color: $primary-color !important;
+  a {
+    color: $body-color !important;
+    text-decoration: none;
+  }
+}
+
+button.btn a {
+  color: $body-color;
+}
+
+button.btn-primary {
+  background-color: $button-primary-color !important;
+  border-color: $button-primary-color !important;
+}
+
+.navbar-nav a.active {
+  font-weight: bold;
+}
+
+.navbar-dark .navbar-toggler {
+  color: rbga(216, 216, 216, 0.5);
+  border-color: rbga(216, 216, 216, 0.1);
+}

@@ -1,0 +1,135 @@
+[
+  {
+    "id": 0,
+    "company_name": "phData",
+    "company_website": "https://phdata.io",
+    "current_title": "Solutions Architect",
+    "start_date": "2020-01-28T00:14:00.000Z",
+    "end_date": null,
+    "achievements": [
+      {
+        "id": 0,
+        "text": "Implemented Cognito and Okta authentication on React/Java applications"
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "company_name": "C.H. Robinson",
+    "company_website": "https://chrobinson.com",
+    "current_title": "Principal Software Engineer (Architect)",
+    "start_date": "2016-06-25T00:14:00.000Z",
+    "end_date": "2020-01-17T00:14:00.000Z",
+    "achievements": [
+      {
+        "id": 0,
+        "text": "Reduced UI bundle size by 50% and load time by 2.5 seconds",
+        "sub_achievements": [
+          {
+            "id": 0,
+            "text": "Multi entry/code splitting"
+          },
+          {
+            "id": 1,
+            "text": "Replaced Lodash/Moment due to lack of tree shaking"
+          },
+          {
+            "id": 2,
+            "text": "Updated Webpack V3 to V4"
+          },
+          {
+            "id": 3,
+            "text": "Multiple bundles (app/vendor/runtime)"
+          },
+          {
+            "id": 4,
+            "text": "Removed sourcemaps in prod environments"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "text": "Containerized React UI integration tests for the entire company improving:",
+        "sub_achievements": [
+          {
+            "id": 0,
+            "text": "Stability (Unix vs Windows)"
+          },
+          {
+            "id": 1,
+            "text": "Runtime (reduced by ~65%)"
+          },
+          {
+            "id": 2,
+            "text": "Environment debugging"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "Upgraded authentication strategy from custom to oAuth/OIDC"
+      },
+      {
+        "id": 3,
+        "text": "Grew multiple teams from one to 10+ developers"
+      },
+      {
+        "id": 4,
+        "text": "Architected and implemented cross domain solutions",
+        "sub_achievements": [
+          {
+            "id": 0,
+            "text": "Application monitor/dashboard"
+          },
+          {
+            "id": 1,
+            "text": "Microservice/Microsite architecture",
+            "link": "https://engineering.chrobinson.com/technology/navisphere-transformation/"
+          },
+          {
+            "id": 2,
+            "text": "Customized order entry"
+          },
+          {
+            "id": 3,
+            "text": "App/Email notifications"
+          },
+          {
+            "id": 4,
+            "text": "Customer document storage"
+          },
+          {
+            "id": 5,
+            "text": "Shipping document aggregation"
+          },
+          {
+            "id": 6,
+            "text": "Document messaging"
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "text": "Introduced new technologies to team including:",
+        "sub_achievements": [
+          {
+            "id": 0,
+            "text": "Node"
+          },
+          {
+            "id": 1,
+            "text": "Docker"
+          },
+          {
+            "id": 2,
+            "text": "Auth0"
+          },
+          {
+            "id": 3,
+            "text": "Okta"
+          }
+        ]
+      }
+    ]
+  }
+]
