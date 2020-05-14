@@ -33,7 +33,8 @@ const renderAchievements = (achievements: Achievement[]) => (
 const renderJobCard = (job: Job) => (
   <Col
     sm={{ offset: 2, span: 10 }}
-    xl={{ offset: 0, span: 6 }}
+    lg={{ offset: 2, span: 8 }}
+    xl={{ offset: 3, span: 6 }}
     className="space-top-md"
   >
     <Card>
@@ -76,7 +77,7 @@ const Experience: React.FC = () => {
   return (
     <>
       <Row className="space-top-lg">
-        <Col>
+        <Col sm={{ offset: 1 }} xl={{ offset: 2 }}>
           <h6>Work Experience</h6>
         </Col>
       </Row>
