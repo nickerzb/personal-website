@@ -131,5 +131,43 @@
         ]
       }
     ]
+  },
+  {
+    "id": 2,
+    "company_name": "ImageTrend",
+    "company_website": "https://imagetrend.com/",
+    "current_title": "Software Engineer II",
+    "start_date": "2014-06-01T00:14:00.000Z",
+    "end_date": "2016-06-01T00:14:00.000Z",
+    "achievements": [
+      {
+        "id": 0,
+        "text": "Scripted load tests using AWS EC2 saving $50,000 per test"
+      },
+      {
+        "id": 1,
+        "text": "Implemented EDI Mapper solution for manufacturer representative"
+      },
+      {
+        "id": 2,
+        "text": "Reduced API call runtime by 1700%"
+      },
+      {
+        "id": 3,
+        "text": "Supported live auctions generating $100,000,000 in revenue"
+      },
+      {
+        "id": 4,
+        "text": "Designed dashboards for recruiters and background check systems"
+      },
+      {
+        "id": 5,
+        "text": "Developed management skills through intern mentorship"
+      },
+      {
+        "id": 6,
+        "text": "Presented knowledge of AWS EC2 to dev community"
+      }
+    ]
   }
 ]

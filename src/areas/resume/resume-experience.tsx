@@ -31,29 +31,31 @@ const renderAchievements = (achievements: Achievement[]) => (
 );
 
 const renderJobCard = (job: Job) => (
-  <Row className={job.id !== 0 ? "space-top-lg" : "space-top-sm"} key={job.id}>
-    <Col sm={{ offset: 1 }}>
-      <Card>
-        <Card.Body>
-          <div>
-            <a
-              href={job.company_website}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i>{job.company_name}</i>
-            </a>
-            <i>, {job.current_title}</i>
-            <span style={{ float: "right" }}>
-              {job.start_date.getFullYear()} -{" "}
-              {job.end_date ? job.end_date.getFullYear() : "Current"}
-            </span>
-          </div>
-          {renderAchievements(job.achievements)}
-        </Card.Body>
-      </Card>
-    </Col>
-  </Row>
+  <Col
+    sm={{ offset: 2, span: 10 }}
+    xl={{ offset: 0, span: 6 }}
+    className="space-top-md"
+  >
+    <Card>
+      <Card.Body>
+        <div>
+          <a
+            href={job.company_website}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i>{job.company_name}</i>
+          </a>
+          <i>, {job.current_title}</i>
+          <span style={{ float: "right" }}>
+            {job.start_date.getFullYear()} -{" "}
+            {job.end_date ? job.end_date.getFullYear() : "Current"}
+          </span>
+        </div>
+        {renderAchievements(job.achievements)}
+      </Card.Body>
+    </Card>
+  </Col>
 );
 
 const Experience: React.FC = () => {
@@ -78,7 +80,7 @@ const Experience: React.FC = () => {
           <h6>Work Experience</h6>
         </Col>
       </Row>
-      {jobs?.map(renderJobCard)}
+      <Row className="space-top-lg">{jobs?.map(renderJobCard)}</Row>
     </>
   );
 };
