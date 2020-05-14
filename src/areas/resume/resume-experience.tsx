@@ -81,7 +81,7 @@ const Experience: React.FC = () => {
           <h6>Work Experience</h6>
         </Col>
       </Row>
-      <Row className="space-top-lg">{jobs?.map(renderJobCard)}</Row>
+      <Row>{jobs?.map(renderJobCard)}</Row>
     </>
   );
 };
