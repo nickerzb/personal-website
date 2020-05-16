@@ -30,6 +30,7 @@ const App: React.FC = () => {
           <MyModal />
         </Suspense>
       </Container>
+      <div className="space-top-lg" />
       <Footer />
     </Router>
   );

@@ -2,12 +2,15 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useQuery } from "react-query";
-import { getJobInfo } from "../../../common/api/resume";
-import LoadingSpinner from "../../../common/components/loading-spinner";
-import ExperienceCard from "./experience-card";
+import { getCertificationsInfo } from "../../common/api/resume";
+import LoadingSpinner from "../../common/components/loading-spinner";
+import CertificationCard from "./certification-card";
 
-const Experience: React.FC = () => {
-  const { data: jobs, isLoading, error } = useQuery("jobs", getJobInfo);
+const Certifications: React.FC = () => {
+  const { data: certifications, isLoading, error } = useQuery(
+    "certifications",
+    getCertificationsInfo
+  );
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -25,12 +28,12 @@ const Experience: React.FC = () => {
     <>
       <Row className="space-top-lg">
         <Col sm={{ offset: 1 }} lg={{ offset: 2 }} xl={{ offset: 3 }}>
-          <h4>Work Experience</h4>
+          <h4>Certifications</h4>
         </Col>
       </Row>
-      <Row>{jobs?.map(ExperienceCard)}</Row>
+      <Row>{certifications?.map(CertificationCard)}</Row>
     </>
   );
 };
 
-export default Experience;
+export default Certifications;

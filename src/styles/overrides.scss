@@ -8,10 +8,6 @@
   }
 }
 
-button.btn a {
-  color: $body-color;
-}
-
 button.btn-primary {
   background-color: $button-primary-color !important;
   border-color: $button-primary-color !important;
@@ -24,4 +20,9 @@ button.btn-primary {
 .navbar-dark .navbar-toggler {
   color: rbga(216, 216, 216, 0.5);
   border-color: rbga(216, 216, 216, 0.1);
+}
+
+.btn-outline-primary {
+  color: $button-primary-color !important;
+  border-color: $button-primary-color !important;
 }

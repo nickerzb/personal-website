@@ -4,42 +4,29 @@ import Col from "react-bootstrap/Col";
 
 const ResumeHeader: React.FC = () => {
   return (
-    <div>
-      <Row>
-        <Col>
-          <h4 className="align-center">Nick Goble</h4>
-        </Col>
-      </Row>
-      <Row className="space-top-lg">
-        <Col xs={6}>
-          <h6 className="align-center title no-bottom-margin">Address:</h6>
-          <p className="align-center text-align-center">
-            7210 4th Avenue S
-            <br />
-            Richfield, MN
-          </p>
-        </Col>
-        <Col xs={6}>
-          <h6 className="align-center title no-bottom-margin">Contact Info:</h6>
-          <p
-            className="align-center text-align-center"
-            style={{ display: "block" }}
+    <Row>
+      <Col
+        xs={6}
+        sm={{ offset: 1, span: 5 }}
+        md={{ offset: 2, span: 4 }}
+        lg={{ offset: 3, span: 3 }}
+      >
+        <h4 className="title no-bottom-margin full-height align-right">
+          Nick Goble
+        </h4>
+      </Col>
+      <Col xs={6} sm={5} md={4} lg={3}>
+        <span className="title no-bottom-margin vertical-center">
+          <a
+            href="mailto:nickerzb@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <a
-              href="mailto:nickerzb@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              nickerzb@gmail.com
-            </a>
-            <br />
-            <a href="tel:2185909657" target="_blank" rel="noopener noreferrer">
-              2185909657
-            </a>
-          </p>
-        </Col>
-      </Row>
-    </div>
+            nickerzb@gmail.com
+          </a>
+        </span>
+      </Col>
+    </Row>
   );
 };
 

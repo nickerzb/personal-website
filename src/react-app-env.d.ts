@@ -10,7 +10,6 @@ interface ResumeInfo {
 }
 
 interface Job {
-  id: number;
   company_name: string;
   company_website: string;
   start_date: string;
@@ -39,8 +38,17 @@ interface Title {
 }
 
 interface Achievement {
-  id: number;
+  sort_order: number;
   text: string;
   sub_achievements: Achievement[];
   link: string;
+}
+
+interface Certification {
+  title: string;
+  number: string;
+  link: string;
+  start_date: string;
+  end_date: string;
+  image_url: string;
 }

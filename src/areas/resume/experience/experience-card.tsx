@@ -8,8 +8,8 @@ import { OPEN_MODAL } from "../../../common/redux/modal-actions";
 const renderAchievements = (achievements: Achievement[]) => (
   <ul>
     {achievements.map(achievement => (
-      <>
-        <li key={achievement.text}>
+      <div key={achievement.text}>
+        <li>
           {achievement.link && (
             <a
               href={achievement.link}
@@ -24,14 +24,14 @@ const renderAchievements = (achievements: Achievement[]) => (
         {achievement.sub_achievements
           ? renderAchievements(achievement.sub_achievements)
           : null}
-      </>
+      </div>
     ))}
   </ul>
 );
 
-const renderBlogPosts = (blogs: Blog[]) => {
-  return blogs.map(blog => (
-    <div>
+const renderBlogPosts = (blogs: Blog[]) =>
+  blogs.map(blog => (
+    <div key={blog.title}>
       <h6>
         <a href={blog.link} target="_blank" rel="noopener noreferrer">
           {blog.title}
@@ -41,7 +41,19 @@ const renderBlogPosts = (blogs: Blog[]) => {
       <p>{blog.description}</p>
     </div>
   ));
-};
+
+const renderTitles = (titles: Title[]) => (
+  <ul>
+    {titles.map(title => (
+      <li key={`${title.title}_${title.start_date}`}>
+        {title.title} from {new Date(title.start_date).toLocaleDateString()} -{" "}
+        {title.end_date
+          ? new Date(title.end_date).toLocaleDateString()
+          : "Current"}
+      </li>
+    ))}
+  </ul>
+);
 
 const ExperienceCard: React.FC<Job> = (job: Job) => {
   const dispatch = useDispatch();
@@ -52,7 +64,7 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
       lg={{ offset: 2, span: 8 }}
       xl={{ offset: 3, span: 6 }}
       className="space-top-md"
-      key={job.id}
+      key={job.company_name}
     >
       <Card>
         <Card.Body>
@@ -74,13 +86,12 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
           <div style={{ marginTop: "10px" }}>
             <Button
               className="space-around-sm"
-              variant="outline-primary"
               size="sm"
               onClick={() =>
                 dispatch({
                   type: OPEN_MODAL,
                   payload: {
-                    title: "Achievements",
+                    title: `Achievements (${job.company_name})`,
                     body: renderAchievements(job.achievements)
                   }
                 })
@@ -91,13 +102,12 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
             {job.blog_posts && (
               <Button
                 className="space-around-sm"
-                variant="outline-primary"
                 size="sm"
                 onClick={() =>
                   dispatch({
                     type: OPEN_MODAL,
                     payload: {
-                      title: "Blog Posts",
+                      title: `Blog Posts (${job.company_name})`,
                       body: renderBlogPosts(job.blog_posts)
                     }
                   })
@@ -108,8 +118,16 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
             )}
             <Button
               className="space-around-sm"
-              variant="outline-primary"
               size="sm"
+              onClick={() =>
+                dispatch({
+                  type: OPEN_MODAL,
+                  payload: {
+                    title: `Titles (${job.company_name})`,
+                    body: renderTitles(job.titles)
+                  }
+                })
+              }
             >
               Titles
             </Button>
