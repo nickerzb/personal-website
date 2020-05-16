@@ -29,6 +29,20 @@ const renderAchievements = (achievements: Achievement[]) => (
   </ul>
 );
 
+const renderBlogPosts = (blogs: Blog[]) => {
+  return blogs.map(blog => (
+    <div>
+      <h6>
+        <a href={blog.link} target="_blank" rel="noopener noreferrer">
+          {blog.title}
+        </a>
+      </h6>
+      <small>Published on {new Date(blog.published_date).toDateString()}</small>
+      <p>{blog.description}</p>
+    </div>
+  ));
+};
+
 const ExperienceCard: React.FC<Job> = (job: Job) => {
   const dispatch = useDispatch();
   const lastTitle = job.titles[0];
@@ -79,6 +93,15 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
                 className="space-around-sm"
                 variant="outline-primary"
                 size="sm"
+                onClick={() =>
+                  dispatch({
+                    type: OPEN_MODAL,
+                    payload: {
+                      title: "Blog Posts",
+                      body: renderBlogPosts(job.blog_posts)
+                    }
+                  })
+                }
               >
                 Blog Posts
               </Button>

@@ -31,6 +31,12 @@
         "link": "https://engineering.chrobinson.com/technology/freightquote-by-ch-robinson/",
         "description": "When you're building a user interface, it's important to keep a target audience in mind.  Our goal was to build the best customer experience for non-industry professionals.",
         "published_date": "2019-06-13T00:00:00.000Z"
+      },
+      {
+        "title": "Navisphere Transformation",
+        "link": "https://engineering.chrobinson.com/technology/navisphere-transformation/",
+        "description": "Updating legacy tech to modern architectures is an important task.  As an enterprise, you need to set yourself up for scalability and future changes.  See how we did it for our customers.",
+        "published_date": "2018-08-09T00:00:00.000Z"
       }
     ],
     "titles": [
