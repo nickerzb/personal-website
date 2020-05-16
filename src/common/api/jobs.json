@@ -3,9 +3,15 @@
     "id": 0,
     "company_name": "phData",
     "company_website": "https://phdata.io",
-    "current_title": "Solutions Architect",
-    "start_date": "2020-01-28T00:14:00.000Z",
+    "start_date": "2020-01-28T00:00:00.000Z",
     "end_date": null,
+    "titles": [
+      {
+        "title": "Solutions Architect",
+        "start_date": "2020-01-28T00:00:00.000Z",
+        "end_date": null
+      }
+    ],
     "achievements": [
       {
         "id": 0,
@@ -17,9 +23,33 @@
     "id": 1,
     "company_name": "C.H. Robinson",
     "company_website": "https://chrobinson.com",
-    "current_title": "Architect",
-    "start_date": "2016-06-25T00:14:00.000Z",
-    "end_date": "2020-01-17T00:14:00.000Z",
+    "start_date": "2016-06-25T00:00:00.000Z",
+    "end_date": "2020-01-17T00:00:00.000Z",
+    "blog_posts": [
+      {
+        "title": "Building a Better User Experience: Freightquote by C.H. Robinson",
+        "link": "https://engineering.chrobinson.com/technology/freightquote-by-ch-robinson/",
+        "description": "When you're building a user interface, it's important to keep a target audience in mind.  Our goal was to build the best customer experience for non-industry professionals.",
+        "published_date": "2019-06-13T00:00:00.000Z"
+      }
+    ],
+    "titles": [
+      {
+        "title": "Principal Software Engineer",
+        "start_date": "2019-07-01T00:00:00.000Z",
+        "end_date": "2020-01-17T00:00:00.000Z"
+      },
+      {
+        "title": "Software Engineer III",
+        "start_date": "2018-07-01T00:00:00.000Z",
+        "end_date": "2019-07-01T00:00:00.000Z"
+      },
+      {
+        "title": "Software Engineer II",
+        "start_date": "2016-06-01T00:00:00.000Z",
+        "end_date": "2018-07-01T00:00:00.000Z"
+      }
+    ],
     "achievements": [
       {
         "id": 0,
@@ -136,9 +166,20 @@
     "id": 2,
     "company_name": "ImageTrend",
     "company_website": "https://imagetrend.com/",
-    "current_title": "Software Engineer II",
     "start_date": "2014-06-01T00:14:00.000Z",
     "end_date": "2016-06-01T00:14:00.000Z",
+    "titles": [
+      {
+        "title": "Software Engineer II",
+        "start_date": "2015-06-01T00:00:00.000Z",
+        "end_date": "2016-06-01T00:00:00.000Z"
+      },
+      {
+        "title": "Software Engineer I",
+        "start_date": "2014-06-01T00:00:00.000Z",
+        "end_date": "2015-06-01T00:00:00.000Z"
+      }
+    ],
     "achievements": [
       {
         "id": 0,

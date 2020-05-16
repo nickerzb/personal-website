@@ -11,7 +11,7 @@ const ResumeHeader: React.FC = () => {
         </Col>
       </Row>
       <Row className="space-top-lg">
-        <Col sm={6}>
+        <Col xs={6}>
           <h6 className="align-center title no-bottom-margin">Address:</h6>
           <p className="align-center text-align-center">
             7210 4th Avenue S
@@ -19,7 +19,7 @@ const ResumeHeader: React.FC = () => {
             Richfield, MN
           </p>
         </Col>
-        <Col sm={6}>
+        <Col xs={6}>
           <h6 className="align-center title no-bottom-margin">Contact Info:</h6>
           <p
             className="align-center text-align-center"

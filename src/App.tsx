@@ -9,6 +9,7 @@ import Footer from "./common/components/footer";
 import * as paths from "./common/constants/routes";
 
 const ResumeWrapper = lazy(() => import("./areas/resume/resume-wrapper"));
+const MyModal = lazy(() => import("./common/components/modal"));
 
 const App: React.FC = () => {
   return (
@@ -26,6 +27,7 @@ const App: React.FC = () => {
               component={ResumeWrapper}
             />
           </Switch>
+          <MyModal />
         </Suspense>
       </Container>
       <Footer />
