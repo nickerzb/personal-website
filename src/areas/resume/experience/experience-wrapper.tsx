@@ -12,6 +12,7 @@ const Experience: React.FC = () => {
   if (isLoading) {
     return <LoadingSpinner />;
   }
+
   if (error) {
     return (
       <div>
@@ -23,7 +24,7 @@ const Experience: React.FC = () => {
 
   return (
     <>
-      <Row className="space-top-lg">
+      <Row>
         <Col sm={{ offset: 1 }} lg={{ offset: 2 }} xl={{ offset: 3 }}>
           <h4 className="section-header no-bottom-margin">Work Experience</h4>
         </Col>

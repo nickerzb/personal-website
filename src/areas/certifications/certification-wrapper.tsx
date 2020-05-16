@@ -15,6 +15,7 @@ const Certifications: React.FC = () => {
   if (isLoading) {
     return <LoadingSpinner />;
   }
+
   if (error) {
     return (
       <div>
