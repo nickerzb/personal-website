@@ -85,7 +85,7 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
           <i className="d-md-none">{lastTitle.title}</i>
           <div style={{ marginTop: "10px" }}>
             <Button
-              className="space-around-sm"
+              className="space-right"
               size="sm"
               onClick={() =>
                 dispatch({
@@ -101,7 +101,7 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
             </Button>
             {job.blog_posts && (
               <Button
-                className="space-around-sm"
+                className="space-right"
                 size="sm"
                 onClick={() =>
                   dispatch({
@@ -117,7 +117,7 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
               </Button>
             )}
             <Button
-              className="space-around-sm"
+              className="space-right"
               size="sm"
               onClick={() =>
                 dispatch({
