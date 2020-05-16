@@ -27,8 +27,20 @@ nav {
   max-width: 95%;
 }
 
+.section-header {
+  font-weight: 700;
+  color: $primary-color;
+}
+
 footer {
   flex: 0 1 30px;
   background-color: $primary-color;
   color: white;
+  white-space: pre;
+  a {
+    color: white;
+  }
+  a:hover {
+    color: white;
+  }
 }

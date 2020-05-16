@@ -1,5 +1,16 @@
 import React from "react";
 
-const footer = () => <footer className="align-center">Built with React</footer>;
+const footer = () => (
+  <footer className="align-center">
+    <span>Contact me at </span>
+    <a
+      href="mailto:nickerzb@gmail.com"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      nickerzb@gmail.com
+    </a>
+  </footer>
+);
 
 export default footer;

@@ -25,7 +25,7 @@ const Experience: React.FC = () => {
     <>
       <Row className="space-top-lg">
         <Col sm={{ offset: 1 }} lg={{ offset: 2 }} xl={{ offset: 3 }}>
-          <h4>Work Experience</h4>
+          <h4 className="section-header no-bottom-margin">Work Experience</h4>
         </Col>
       </Row>
       <Row>{jobs?.map(ExperienceCard)}</Row>

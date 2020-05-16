@@ -9,8 +9,8 @@
 }
 
 button.btn-primary {
-  background-color: $button-primary-color !important;
-  border-color: $button-primary-color !important;
+  background-color: $primary-color !important;
+  border-color: $primary-color !important;
 }
 
 .navbar-nav a.active {
@@ -23,6 +23,10 @@ button.btn-primary {
 }
 
 .btn-outline-primary {
-  color: $button-primary-color !important;
-  border-color: $button-primary-color !important;
+  color: $primary-color !important;
+  border-color: $primary-color !important;
+}
+
+.card-body {
+  padding: 0.75rem;
 }

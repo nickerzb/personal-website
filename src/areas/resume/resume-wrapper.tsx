@@ -6,7 +6,6 @@ import Certifications from "../certifications/certification-wrapper";
 const ResumeWrapper: React.FC = () => {
   return (
     <>
-      <ResumeHeader />
       <Experience />
       <Certifications />
     </>
