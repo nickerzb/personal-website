@@ -33,7 +33,7 @@
       {
         "title": "Navisphere Transformation",
         "link": "https://engineering.chrobinson.com/technology/navisphere-transformation/",
-        "description": "Updating legacy tech to modern architectures is an important task.  As an enterprise, you need to set yourself up for scalability and future changes.  See how we dsort_order it for our customers.",
+        "description": "Updating legacy tech to modern architectures is an important task.  As an enterprise, you need to set yourself up for scalability and future changes.  See how we did it for our customers.",
         "published_date": "2018-08-09T00:00:00.000"
       }
     ],
@@ -105,7 +105,7 @@
       },
       {
         "sort_order": 3,
-        "text": "Upgraded authentication strategy from custom to oAuth/Osort_orderC"
+        "text": "Upgraded authentication strategy from custom to oAuth/OIDC"
       },
       {
         "sort_order": 4,

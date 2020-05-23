@@ -46,10 +46,15 @@ const renderTitles = (titles: Title[]) => (
   <ul>
     {titles.map(title => (
       <li key={`${title.title}_${title.start_date}`}>
-        {title.title} from {new Date(title.start_date).toLocaleDateString()} -{" "}
-        {title.end_date
-          ? new Date(title.end_date).toLocaleDateString()
-          : "Current"}
+        {title.title}
+        <ul>
+          <li>
+            {new Date(title.start_date).toLocaleDateString()} -{" "}
+            {title.end_date
+              ? new Date(title.end_date).toLocaleDateString()
+              : "Current"}
+          </li>
+        </ul>
       </li>
     ))}
   </ul>
