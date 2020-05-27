@@ -14,6 +14,8 @@ a {
 
 #root {
   display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap !important;
   flex-flow: column;
   height: 100vh;
 }
