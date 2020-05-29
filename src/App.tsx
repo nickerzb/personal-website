@@ -17,19 +17,21 @@ const App: React.FC = () => {
       <NavBar />
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
-      <Container fluid>
-        <div className="space-top-lg" />
-        <Suspense fallback={LoadingSpinner()}>
-          <Switch>
-            <Route
-              exact
-              path={[paths.home, paths.resume]}
-              component={ResumeWrapper}
-            />
-          </Switch>
-          <MyModal />
-        </Suspense>
-      </Container>
+      <main>
+        <Container fluid>
+          <div className="space-top-lg" />
+          <Suspense fallback={LoadingSpinner()}>
+            <Switch>
+              <Route
+                exact
+                path={[paths.home, paths.resume]}
+                component={ResumeWrapper}
+              />
+            </Switch>
+            <MyModal />
+          </Suspense>
+        </Container>
+      </main>
       <div className="space-top-lg" />
       <Footer />
     </Router>
