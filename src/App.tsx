@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import NavBar from "./common/components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.scss";

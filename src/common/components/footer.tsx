@@ -1,4 +1,5 @@
 import React from "react";
+import { github } from "../constants/routes";
 
 const footer = () => (
   <footer className="align-center">
@@ -7,7 +8,11 @@ const footer = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      nickerzb@gmail.com
+      Email
+    </a>
+    <span className="space-around">|</span>
+    <a href={github} target="_blank" rel="noopener noreferrer">
+      Source Code
     </a>
   </footer>
 );
