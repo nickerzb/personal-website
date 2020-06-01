@@ -7,7 +7,7 @@ import { resume } from "../constants/routes";
 const NavBar = () => {
   return (
     <header>
-      <Navbar expand="md" variant="dark">
+      <Navbar expand="md" variant="dark" collapseOnSelect>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" defaultActiveKey="/resume">
