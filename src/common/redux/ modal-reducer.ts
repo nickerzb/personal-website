@@ -1,7 +1,13 @@
 import { OPEN_MODAL, CLOSE_MODAL } from "./modal-actions";
 
+const initialState: ModalState = {
+  open: false,
+  body: "",
+  title: ""
+};
+
 export const modalReducer = (
-  state = { open: false, body: "", title: "" },
+  state = initialState,
   action: ReduxAction
 ): ModalState => {
   switch (action.type) {
@@ -15,9 +21,7 @@ export const modalReducer = (
     case CLOSE_MODAL:
       return {
         ...state,
-        open: false,
-        body: "",
-        title: ""
+        ...initialState
       };
     default:
       return state;

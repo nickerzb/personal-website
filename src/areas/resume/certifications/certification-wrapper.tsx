@@ -2,8 +2,8 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useQuery } from "react-query";
-import { getCertificationsInfo } from "../../common/api/resume";
-import LoadingSpinner from "../../common/components/loading-spinner";
+import { getCertificationsInfo } from "../../../common/api/resume";
+import LoadingSpinner from "../../../common/components/loading-spinner";
 import CertificationCard from "./certification-card";
 
 const Certifications: React.FC = () => {
