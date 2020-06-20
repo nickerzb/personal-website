@@ -64,13 +64,7 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
   const dispatch = useDispatch();
   const lastTitle = job.titles[0];
   return (
-    <Col
-      sm={{ offset: 1, span: 10 }}
-      lg={{ offset: 2, span: 8 }}
-      xl={{ offset: 3, span: 6 }}
-      className="space-top-md"
-      key={job.company_name}
-    >
+    <Col xs={12} className="space-top-md" key={job.company_name}>
       <Card>
         <Card.Body>
           <div>

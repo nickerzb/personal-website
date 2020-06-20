@@ -7,13 +7,7 @@ import Row from "react-bootstrap/Row";
 const CertificationCard: React.FC<Certification> = (
   certification: Certification
 ) => (
-  <Col
-    sm={{ offset: 1, span: 10 }}
-    lg={{ offset: 2, span: 8 }}
-    xl={{ offset: 3, span: 6 }}
-    className="space-top-md"
-    key={certification.title}
-  >
+  <Col xs={12} className="space-top-md" key={certification.title}>
     <Card>
       <Card.Body>
         <Row>
