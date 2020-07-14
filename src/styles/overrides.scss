@@ -34,3 +34,7 @@ button.btn-primary {
 .container-fluid {
   max-width: 95%;
 }
+
+.btn-primary:focus {
+  box-shadow: none;
+}
