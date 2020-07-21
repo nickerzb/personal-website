@@ -1,0 +1,9 @@
+@import "../../styles/variables";
+
+#brand-logo {
+  background-color: white;
+  border-color: white;
+  color: $primary-color !important;
+  font-weight: bold;
+  padding: 5px;
+}

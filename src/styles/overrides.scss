@@ -27,8 +27,13 @@ button.btn-primary {
   border-color: $primary-color !important;
 }
 
+.card-title,
 .card-body {
   padding: 0.75rem;
+}
+
+.card-title {
+  border-bottom: 1px solid $primary-color;
 }
 
 .container-fluid {

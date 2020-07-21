@@ -8,7 +8,9 @@ import LoadingSpinner from "./common/components/loading-spinner";
 import Footer from "./common/components/footer";
 import * as paths from "./common/constants/routes";
 
-const ResumeWrapper = lazy(() => import("./areas/resume/resume-wrapper"));
+const Resume = lazy(() => import("./areas/resume/resume-wrapper"));
+const About = lazy(() => import("./areas/about/about"));
+const Home = lazy(() => import("./areas/home/home"));
 const MyModal = lazy(() => import("./common/components/modal"));
 
 const App: React.FC = () => {
@@ -22,11 +24,9 @@ const App: React.FC = () => {
           <div className="space-top-lg" />
           <Suspense fallback={LoadingSpinner()}>
             <Switch>
-              <Route
-                exact
-                path={[paths.home, paths.resume]}
-                component={ResumeWrapper}
-              />
+              <Route exact path={paths.resume} component={Resume} />
+              <Route exact path={paths.about} component={About} />
+              <Route exact path={paths.home} component={Home} />
             </Switch>
             <MyModal />
           </Suspense>

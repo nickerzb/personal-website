@@ -73,9 +73,9 @@ const ExperienceCard: React.FC<Job> = (job: Job) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i>{job.company_name}</i>
+              {job.company_name}
             </a>
-            <i className="d-none d-md-inline-block">, {lastTitle.title}</i>
+            , {lastTitle.title}
             <span style={{ float: "right" }}>
               {new Date(job.start_date).getFullYear()} -{" "}
               {job.end_date ? new Date(job.end_date).getFullYear() : "Current"}

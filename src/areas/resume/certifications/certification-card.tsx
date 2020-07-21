@@ -17,7 +17,7 @@ const CertificationCard: React.FC<Certification> = (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <i>{certification.title}</i>
+              {certification.title}
             </a>
           </Col>
           <Col xs={5} sm={3}>
