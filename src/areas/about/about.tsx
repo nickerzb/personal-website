@@ -46,7 +46,7 @@ const About = () => {
                     Science), but also used some Javascript/Python for various
                     scripting needs. I went into college at the University of
                     Wisconsin - Eau Claire declared as a Computer Engineering
-                    major, but my sophomore year, that major was dropped, so I
+                    major, but my sophomore year that major was dropped, so I
                     switched to Computer Science. I still enjoy the hardware
                     side of technology though, having done a number of custom
                     builds for{" "}
@@ -60,15 +60,9 @@ const About = () => {
                     and gaming. I also have an adorable black lab named Jax.
                   </Card.Body>
                 </Col>
-                <Col className="d-none d-xl-block" xl={5}>
+                <Col className=" align-center" xl={5}>
                   <img
-                    height="300"
-                    alt="Nick in car"
-                    src="/Nick_Goble_Profile.jpg"
-                  />
-                </Col>
-                <Col className="d-xl-none align-center" xl={5}>
-                  <img
+                    style={{ padding: ".75rem" }}
                     height="300"
                     alt="Nick in car"
                     src="/Nick_Goble_Profile.jpg"

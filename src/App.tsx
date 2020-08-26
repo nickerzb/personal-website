@@ -10,7 +10,7 @@ import * as paths from "./common/constants/routes";
 
 const Resume = lazy(() => import("./areas/resume/resume-wrapper"));
 const About = lazy(() => import("./areas/about/about"));
-const Home = lazy(() => import("./areas/home/home"));
+// const Home = lazy(() => import("./areas/home/home"));
 const MyModal = lazy(() => import("./common/components/modal"));
 
 const App: React.FC = () => {
@@ -26,7 +26,8 @@ const App: React.FC = () => {
             <Switch>
               <Route exact path={paths.resume} component={Resume} />
               <Route exact path={paths.about} component={About} />
-              <Route exact path={paths.home} component={Home} />
+              {/* <Route exact path={paths.home} component={Home} /> */}
+              <Route component={Resume} />
             </Switch>
             <MyModal />
           </Suspense>

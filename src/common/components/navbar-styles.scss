@@ -1,9 +1,9 @@
 @import "../../styles/variables";
 
 #brand-logo {
-  background-color: white;
-  border-color: white;
-  color: $primary-color !important;
+  background-color: $primary-color;
+  border-color: $body-color;
+  color: $body-color;
   font-weight: bold;
   padding: 5px;
 }
