@@ -9,7 +9,7 @@ import ExperienceCard from "./experience-card";
 const Experience: React.FC = () => {
   const { data: jobs, isLoading, error } = useQuery("jobs", getJobInfo);
 
-  if (isLoading) {
+  if (isLoading || !jobs) {
     return <LoadingSpinner />;
   }
 
@@ -29,7 +29,11 @@ const Experience: React.FC = () => {
           <h4 className="section-header no-bottom-margin">Work Experience</h4>
         </Col>
       </Row>
-      <Row>{jobs?.map(ExperienceCard)}</Row>
+      <Row>
+        {jobs.map(job => (
+          <ExperienceCard job={job} key={job.company_name} />
+        ))}
+      </Row>
     </>
   );
 };

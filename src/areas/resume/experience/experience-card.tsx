@@ -60,11 +60,11 @@ const renderTitles = (titles: Title[]) => (
   </ul>
 );
 
-const ExperienceCard: React.FC<Job> = (job: Job) => {
+const ExperienceCard: React.FC<{ job: Job }> = ({ job }) => {
   const dispatch = useDispatch();
   const lastTitle = job.titles[0];
   return (
-    <Col xs={12} className="space-top-md" key={job.company_name}>
+    <Col xs={12} className="space-top-md">
       <Card>
         <Card.Body>
           <div>

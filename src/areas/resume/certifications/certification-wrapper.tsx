@@ -12,7 +12,7 @@ const Certifications: React.FC = () => {
     getCertificationsInfo
   );
 
-  if (isLoading) {
+  if (isLoading || !certifications) {
     return <LoadingSpinner />;
   }
 
@@ -32,7 +32,7 @@ const Certifications: React.FC = () => {
           <h4 className="section-header no-bottom-margin">Certifications</h4>
         </Col>
       </Row>
-      <Row>{certifications?.map(CertificationCard)}</Row>
+      <Row>{certifications.map(CertificationCard)}</Row>
     </>
   );
 };

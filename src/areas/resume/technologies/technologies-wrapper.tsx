@@ -19,7 +19,7 @@ const Technologies: React.FC = () => {
         <Col className="space-top-sm">
           <Row>
             {namesWithIcons.sort(nameSort).map(({ name, icon }) => (
-              <Col sm={4} xs={6}>
+              <Col key={name} sm={4} xs={6}>
                 <Card className="margin-top-sm align-center">
                   <Card.Body>
                     <Icon {...icon} />
