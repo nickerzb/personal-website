@@ -75,13 +75,15 @@ const ExperienceCard: React.FC<{ job: Job }> = ({ job }) => {
             >
               {job.company_name}
             </a>
-            , {lastTitle.title}
+            <span className="d-none d-md-inline-block">
+              , {lastTitle.title}
+            </span>
             <span style={{ float: "right" }}>
               {new Date(job.start_date).getFullYear()} -{" "}
               {job.end_date ? new Date(job.end_date).getFullYear() : "Current"}
             </span>
           </div>
-          <i className="d-md-none">{lastTitle.title}</i>
+          <span className="d-md-none">{lastTitle.title}</span>
           <div style={{ marginTop: "10px" }}>
             <Button
               className="space-right"
