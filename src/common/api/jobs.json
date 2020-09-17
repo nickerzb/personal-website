@@ -6,6 +6,12 @@
     "end_date": null,
     "blog_posts": [
       {
+        "title": "Organizing A Snowflake Role Hierarchy Within Your Enterprise",
+        "link": "https://www.phdata.io/organizing-a-snowflake-role-hierarchy-within-your-enterprise/",
+        "description": "Simplify access to your resources with business functions in mind",
+        "published_date": "2020-09-07T00:00:00.000"
+      },
+      {
         "title": "Building Data Pipelines With AWS CloudFormation",
         "link": "https://www.phdata.io/building-data-pipelines-with-aws-cloudformation/",
         "description": "How to build data pipelines with Amazon Web Services (AWS) CloudFormation using phData's Cloud Foundation tool",
