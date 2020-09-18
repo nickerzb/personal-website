@@ -9,12 +9,16 @@ jobs:
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
       - 
-        name: Login to ACR
-        uses: docker/login-action@v1
+        name: Azure Container Registry Login
+        id: acr_login
+        uses: Azure/docker-login@v1
         with:
-          registry: ngoble.azurecr.io
+          # Container registry username
           username: ${{ secrets.AZURE_USERNAME }}
-          password: ${{ secrets.AZURE_PASSWORD }}
+          # Container registry password
+          password: ${{ secrets.AZURE_PASSWORD }} 
+          # Container registry server url
+          login-server: ngoble.azurecr.io
       -
         name: Build and push
         id: docker_build
