@@ -22,14 +22,9 @@ jobs:
           args: build -t personal-website .
           
       - name: Tag :latest
-        uses: actions-hub/docker/login@master
-        env:
-          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
-        with: 
-          args: tag personal-website:latest nickerzb/personal-website
+        if: success()
+        run: docker tag personal-website:latest nickerzb/personal-website
 
       - name: Push to docker hub :latest
-        uses: actions-hub/docker@master
-        with:
-          args: push nickerzb/personal-website
+        if: success()
+        run: push nickerzb/personal-website
