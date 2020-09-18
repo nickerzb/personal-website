@@ -3,8 +3,6 @@ on: [push]
 jobs:
   build-and-deploy:
     name: Build and Deploy
-    container:
-      image: node
     runs-on: ubuntu-latest
     steps:
       - 
