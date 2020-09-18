@@ -5,28 +5,23 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Azure Container Registry Login
-      id: acr_login
-      uses: Azure/docker-login@v1
-      with:
-        # Container registry username
-        username: ${{ secrets.AZURE_USERNAME }}
-        # Container registry password
-        password: ${{ secrets.AZURE_PASSWORD }} 
-        # Container registry server url
-        login-server: ngoble.azurecr.io
-    - name: Docker Action
-      # You may pin to the exact commit or the version.
-      # uses: zenato/docker-action@8309ea4d790d074676660449b9f2bcbcae25cdb9
-      uses: zenato/docker-action@v1.0.0
-      env:
-        DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
-      with:
-        username: ${{ secrets.AZURE_USERNAME }}
-        password: ${{ secrets.AZURE_PASSWORD }}
-        # Repository on registry
-        repository: personal-website
-        # Registry hostname
-        registry: ngoble.azurecr.io
-        # Image tag
-        tag: latest
+      - 
+        name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - 
+        name: Login to ACR
+        uses: docker/login-action@v1
+        with:
+          registry: ngoble.azurecr.io
+          username: ${{ secrets.AZURE_USERNAME }}
+          password: ${{ secrets.AZURE_PASSWORD }}
+      -
+        name: Build and push
+        id: docker_build
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          tags: personal-website:latest
+      -
+        name: Image digest
+        run: echo ${{ steps.docker_build.outputs.digest }}
