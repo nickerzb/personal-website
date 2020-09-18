@@ -4,22 +4,26 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    container:
-      image: node:13.12.0-alpine
     steps:
       - 
-        name: Azure Container Registry Login
-        id: acr_login
-        uses: Azure/docker-login@v1
+        uses: actions/checkout@v2.3.2
+      - name: The Docker CLI
+        # You may pin to the exact commit or the version.
+        # uses: actions-hub/docker@726e89023248c002cf9aadfc8b8364687a3ed25f
+        uses: actions-hub/docker@v1.0.0
         with:
-          # Container registry username
-          username: ${{ secrets.AZURE_USERNAME }}
-          # Container registry password
-          password: ${{ secrets.AZURE_PASSWORD }} 
-          # Container registry server url
-          login-server: ngoble.azurecr.io
-      - uses: actions/checkout@v2.3.2
-      - name: Build and push
+          # Docker image (if not the same as repo)
+          NAME: personal-website
+          # Docker tag (if want to specify tag)
+          TAG: ngoble.azurecr.io/personal/website
+          # Docker username
+          DOCKER_USERNAME: ${{ secrets.AZURE_USERNAME }}
+          # Docker password
+          DOCKER_PASSWORD: ${{ secrets.AZURE_PASSWORD }}
+          # Docker registry url
+          DOCKER_REGISTRY_URL: ngoble.azurecr.io
+      - 
+        name: Build and push
         id: docker_build
         env:
           DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
