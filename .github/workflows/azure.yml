@@ -7,28 +7,16 @@ jobs:
       image: node
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.3.2
-      - 
-        name: Azure Container Registry Login
-        id: acr_login
-        uses: Azure/docker-login@v1
-        with:
-          # Container registry username
-          username: ${{ secrets.AZURE_USERNAME }}
-          # Container registry password
-          password: ${{ secrets.AZURE_PASSWORD }} 
-          # Container registry server url
-          login-server: ngoble.azurecr.io
-      - name: Login to azure registry
+      - name: Login to docker hub
         uses: actions-hub/docker/login@master
         env:
-          DOCKER_USERNAME: ${{ secrets.AZURE_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.AZURE_PASSWORD }}
-          DOCKER_REGISTRY_URL: ngoble.azurecr.io/personal/website
-      - name: Docker Build
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
+
+      - name: Build :latest
+        run: docker build -t personal-website:latest .
+
+      - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: docker build -t personal-website .
-      -
-        name: Image digest
-        run: echo ${{ steps.docker_build.outputs.digest }}
+          args: push personal-website:latest
