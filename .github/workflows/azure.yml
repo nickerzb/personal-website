@@ -22,6 +22,8 @@ jobs:
       # uses: zenato/docker-action@8309ea4d790d074676660449b9f2bcbcae25cdb9
       uses: zenato/docker-action@v1.0.0
       with:
+        username: ${{ secrets.AZURE_USERNAME }}
+        password: ${{ secrets.AZURE_PASSWORD }}
         # Repository on registry
         repository: personal-website
         # Registry hostname
