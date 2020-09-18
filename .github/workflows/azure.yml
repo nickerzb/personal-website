@@ -23,10 +23,7 @@ jobs:
         id: docker_build
         env:
           DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
-        run: |
-          - docker build -t personal-website .
-          - docker tag personal-website:latest ngoble.azurecr.io/personal/website
-          - docker push ngoble.azurecr.io/personal/website
+        run: docker build -t personal-website .
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
