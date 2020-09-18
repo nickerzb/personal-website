@@ -22,21 +22,15 @@ jobs:
           password: ${{ secrets.AZURE_PASSWORD }} 
           # Container registry server url
           login-server: ngoble.azurecr.io
-      - 
-        name: echo
-        env:
-          DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
-        run: cat DOCKER_CONFIG
       -
         name: Build and push
         id: docker_build
-        uses: docker/build-push-action@v1.1.1
         env:
           DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
-        with:
-          tags: ngoble.azurecr.io/personal/website:latest
-          push: true
-          dockerfile: ./Dockerfile
+        run: |
+          - docker build -t personal-website .
+          - docker tag personal-website:latest ngoble.azurecr.io/personal/website
+          - docker push ngoble.azurecr.io/personal/website
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
