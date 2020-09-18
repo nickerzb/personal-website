@@ -1,0 +1,22 @@
+on: [push]
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: Microsoft Azure Container Registry Login
+      # You may pin to the exact commit or the version.
+      # uses: elgohr/acr-login-action@b088ef4d7c3847f3c14159b968860890482003fa
+      uses: elgohr/acr-login-action@0.1
+      with:
+        # The ACR service principal to use for login
+        service_principal: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
+        # The password of the service principal
+        service_principal_password: ${{ secrets.AZURE_SERVICE_PASSWORD }}
+        # The ACR tenant to use for login
+        tenant: ${{ secrets.AZURE_TENANT }}
+        # The ACR registry to use
+        registry: ngoble
+        # The ACR repository to use
+        repository: personal-website
