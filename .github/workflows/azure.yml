@@ -19,17 +19,12 @@ jobs:
           password: ${{ secrets.AZURE_PASSWORD }} 
           # Container registry server url
           login-server: ngoble.azurecr.io
-      - name: Docker login
+      - name: Docker Build
         uses: actions-hub/docker@master
         env:
           DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }}
         with:
-          args: login
-      - name: Build and push
-        id: docker_build
-        env:
-          DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
-        run: docker build -t personal-website .
+          args: docker build -t personal-website .
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
