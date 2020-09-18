@@ -21,8 +21,6 @@ jobs:
           login-server: ngoble.azurecr.io
       - name: Docker Build
         uses: actions-hub/docker@master
-        env:
-          DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }}
         with:
           args: docker build -t personal-website .
       -
