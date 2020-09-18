@@ -14,9 +14,16 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_ACCESS_TOKEN }}
 
       - name: Build :latest
-        run: docker build -t personal-website:latest .
+        uses: actions-hub/docker/login@master
+        with: 
+          args: build -t personal-website .
+          
+      - name: Tag :latest
+        uses: actions-hub/docker/login@master
+        with: 
+          args: tag personal-website:latest nickerzb/personal-website
 
       - name: Push to docker hub :latest
         uses: actions-hub/docker@master
         with:
-          args: push personal-website:latest
+          args: push nickerzb/personal-website
