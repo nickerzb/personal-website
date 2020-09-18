@@ -4,8 +4,6 @@ jobs:
   build-and-deploy:
     name: Build and Deploy
     runs-on: ubuntu-latest
-    container:
-      image: node:13.12.0-alpine
     steps:
       - uses: actions/checkout@v2.3.2
       - 
