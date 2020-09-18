@@ -20,9 +20,11 @@ jobs:
           # Container registry server url
           login-server: ngoble.azurecr.io
       - name: Docker login
+        uses: actions-hub/docker@master
         env:
           DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }}
-        run: docker login
+        with:
+          args: login
       - name: Build and push
         id: docker_build
         env:
