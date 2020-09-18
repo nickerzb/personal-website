@@ -24,5 +24,6 @@ jobs:
       with:
         # Server address of Docker registry. If not set then will default to Docker Hub
         push: true
-        tags: ngoble.azurecr.io/personal/website:latest
+        registry: ngoble.azurecr.io
+        repository: personal-website
         file: ./Dockerfile
