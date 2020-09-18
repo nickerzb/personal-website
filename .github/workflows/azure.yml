@@ -30,6 +30,8 @@ jobs:
           DOCKER_CONFIG: ${{ steps.acr_login.outputs.DOCKER_CONFIG }} 
         with:
           tags: personal-website:latest
+          registry: ngoble.azurecr.io
+          push: true
       -
         name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
