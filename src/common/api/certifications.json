@@ -5,7 +5,7 @@
     "end_date": "2023-05-04T00:00:00.000",
     "number": "CNYHMW3CENF416KH",
     "link": "https://aws.amazon.com/certification/certified-solutions-architect-associate/",
-    "image_url": "https://images.youracclaim.com/size/220x220/images/6774b3bf-7a82-4d40-a2d1-86b412635bae/AWS-SolArchitect-Associate.png"
+    "image_url": "aws-solutions-architect-associate.png"
   },
   {
     "title": "Snowflake SnowPro Core",
@@ -13,6 +13,6 @@
     "end_date": "2022-05-15T00:00:00.000",
     "number": "8571036",
     "link": "https://community.snowflake.com/s/snowprocertifications",
-    "image_url": "https://images.youracclaim.com/images/7a2ed5ab-2bed-4b5c-84e9-fc7c71275da4/SnowProCoreTM600.png"
+    "image_url": "snowpro-certification-core.png"
   }
 ]
