@@ -19,6 +19,12 @@ jobs:
           password: ${{ secrets.AZURE_PASSWORD }} 
           # Container registry server url
           login-server: ngoble.azurecr.io
+      - name: Login to azure registry
+        uses: actions-hub/docker/login@master
+        env:
+          DOCKER_USERNAME: ${{ secrets.AZURE_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.AZURE_PASSWORD }}
+          DOCKER_REGISTRY_URL: ngoble.azurecr.io/personal/website
       - name: Docker Build
         uses: actions-hub/docker@master
         with:
