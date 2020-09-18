@@ -9,6 +9,7 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: elgohr/acr-login-action@b088ef4d7c3847f3c14159b968860890482003fa
       uses: elgohr/acr-login-action@master
+      id: acr
       with:
         # The ACR service principal to use for login
         service_principal: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
@@ -20,3 +21,14 @@ jobs:
         registry: ngoble
         # The ACR repository to use
         repository: personal-website
+    - name: Build and push Docker images
+      # You may pin to the exact commit or the version.
+      # uses: docker/build-push-action@ab83648e2e224cfeeab899e23b639660765c3a89
+      uses: docker/build-push-action@v1.1.1
+      with:
+        # Server address of Docker registry. If not set then will default to Docker Hub
+        registry: ngoble.azurecr.io/personal/website
+        # Docker repository to tag the image with
+        repository: personal-website
+        # Always attempt to pull a newer version of the image
+        always_pull: true
