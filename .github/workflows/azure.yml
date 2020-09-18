@@ -23,7 +23,4 @@ jobs:
         registry: ngoble.azurecr.io/personal/website
         # Docker repository to tag the image with
         repository: personal-website
-        # Always attempt to pull a newer version of the image
-        always_pull: true
-        push: true
         tags: personal-website:latest
