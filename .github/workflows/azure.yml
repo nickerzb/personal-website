@@ -5,22 +5,15 @@ jobs:
     name: Build and Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: Microsoft Azure Container Registry Login
-      # You may pin to the exact commit or the version.
-      # uses: elgohr/acr-login-action@b088ef4d7c3847f3c14159b968860890482003fa
-      uses: elgohr/acr-login-action@master
-      id: acr
+    - name: Azure Container Registry Login
+      uses: Azure/docker-login@v1
       with:
-        # The ACR service principal to use for login
-        service_principal: ${{ secrets.AZURE_SERVICE_PRINCIPAL }}
-        # The password of the service principal
-        service_principal_password: ${{ secrets.AZURE_SERVICE_PASSWORD }}
-        # The ACR tenant to use for login
-        tenant: ${{ secrets.AZURE_TENANT }}
-        # The ACR registry to use
-        registry: ngoble
-        # The ACR repository to use
-        repository: personal-website
+        # Container registry username
+        username: ${{ secrets.AZURE_USERNAME }}
+        # Container registry password
+        password: ${{ secrets.AZURE_PASSWORD }} 
+        # Container registry server url
+        login-server: ngoble.azurecr.io/personal/website
     - name: Build and push Docker images
       # You may pin to the exact commit or the version.
       # uses: docker/build-push-action@ab83648e2e224cfeeab899e23b639660765c3a89
