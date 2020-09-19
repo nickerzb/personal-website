@@ -112,7 +112,8 @@ const About = () => {
                 powerlifting to CrossFit. Other interestes cars, motorcycles,
                 audio, skiing, and traveling. Last October, I spent two weeks
                 traveling all over Japan including: Tokyo, Osaka, Kyoto,
-                Hiroshima, and Fukuoka.
+                Hiroshima, and Fukuoka. This winter I plan on spending a month
+                or two in Colarado to go skiing.
               </Card.Body>
             </Card>
           </Col>
