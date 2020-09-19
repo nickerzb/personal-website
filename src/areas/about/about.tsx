@@ -79,7 +79,7 @@ const About = () => {
                 <span className="section-header">For Fun</span>
               </Card.Title>
               <Card.Body>
-                I absolutely love music: it allows us to communicate a range of
+                I absolutely love music; it allows us to communicate a range of
                 emotion and sentiment that words alone cannot carry. I regularly
                 go to live performances, the highest count being 100 unique
                 artists in one year. My favorite venues include{" "}
