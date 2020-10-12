@@ -28,7 +28,61 @@
     "achievements": [
       {
         "sort_order": 0,
-        "text": "Implemented Cognito and Okta authentication on React/Java applications"
+        "text": "phData Internal Engineering Team (Tram)",
+        "sub_achievements": [
+          {
+            "sort_order": 0,
+            "text": "Implemented Data drift/pretty print functionality for managing Snowflake resources"
+          },
+          {
+            "sort_order": 1,
+            "text": "Performed load testing/profiling for identifying under-performing Snowflake processes"
+          },
+          {
+            "sort_order": 2,
+            "text": "Restructured workspace generation to allow for aggregation of local workspace resources"
+          }
+        ]
+      },
+      {
+        "sort_order": 1,
+        "text": "phData Internal Engineering Team (SqlMorph)",
+        "sub_achievements": [
+          {
+            "sort_order": 0,
+            "text": "Secured applications with AWS Cognito and Okta Authentication (OIDC)"
+          },
+          {
+            "sort_order": 1,
+            "text": "Standardized company’s user registration/creation/authentication workflow and UI testing (snapshot/integration/unit testing)"
+          }
+        ]
+      },
+      {
+        "sort_order": 2,
+        "text": "Top Restaurant Chain (3 months - ongoing)",
+        "sub_achievements": [
+          {
+            "sort_order": 0,
+            "text": "Designed data migration strategy from Oracle Fusion to Redshift using AWS S3, Lambda, Glue, and Apache Airflow"
+          },
+          {
+            "sort_order": 1,
+            "text": "Managed client and team of four developers"
+          },
+          {
+            "sort_order": 2,
+            "text": "Broke problem statements into workable chunks for development team"
+          },
+          {
+            "sort_order": 3,
+            "text": "Communicated status updates to client and executive team"
+          },
+          {
+            "sort_order": 4,
+            "text": "Grew initial engagement with client to multiple opportunities (Redshift to Snowflake, batch to streaming)"
+          }
+        ]
       }
     ]
   },
