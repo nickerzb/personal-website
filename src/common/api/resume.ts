@@ -10,12 +10,24 @@ export const getJobInfo = async (): Promise<Job[]> => {
   const container = database.container("Jobs");
 
   const querySpec = {
-    query: "SELECT * from jobs order by jobs.start_date desc"
+    query: "SELECT * from jobs"
   };
   const { resources: items } = await container.items
     .query(querySpec)
     .fetchAll();
-  return items as Job[];
+
+  const sorted = items.sort(
+    (
+      a: { start_date: string | number | Date },
+      b: { start_date: string | number | Date }
+    ) => {
+      const aDate = +new Date(a.start_date);
+      const bDate = +new Date(b.start_date);
+      return bDate - aDate;
+    }
+  );
+
+  return sorted as Job[];
 };
 
 export const getCertificationsInfo = async (): Promise<Certification[]> => {
@@ -23,11 +35,15 @@ export const getCertificationsInfo = async (): Promise<Certification[]> => {
   const container = database.container("Certifications");
 
   const querySpec = {
-    query: "SELECT * from certifications order by certifications.title"
+    query: "SELECT * from certifications"
   };
   const { resources: items } = await container.items
     .query(querySpec)
     .fetchAll();
 
-  return items as Certification[];
+  const data = items.sort((a: { title: string }, b: { title: any }) =>
+    a.title.localeCompare(b.title)
+  );
+
+  return data as Certification[];
 };
