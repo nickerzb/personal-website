@@ -1,24 +1,29 @@
-import React from "react";
-import Experience from "./experience/experience-wrapper";
-import Certifications from "./certifications/certification-wrapper";
-import Technologies from "./technologies/technologies-wrapper";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import "./resume-styles.scss";
-import { getCertificationsInfo, getJobInfo } from "../../common/api/resume";
-import { useQuery } from "react-query";
-import LoadingSpinner from "../../common/components/loading-spinner";
+import React from 'react';
+import Experience from './experience/experience-wrapper';
+import Certifications from './certifications/certification-wrapper';
+import Technologies from './technologies/technologies-wrapper';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import './resume-styles.scss';
+import { getCertificationsInfo, getJobInfo } from '../../common/api/resume';
+import { useQuery } from 'react-query';
+import LoadingSpinner from '../../common/components/loading-spinner';
 
 const ResumeWrapper: React.FC = () => {
   const {
     data: certifications,
     isLoading: certIsLoading,
-    error: certError
-  } = useQuery("certifications", getCertificationsInfo);
+    error: certError,
+  } = useQuery('certifications', getCertificationsInfo, {
+    refetchOnWindowFocus: false,
+  });
 
   const { data: jobs, isLoading: jobIsLoading, error: jobError } = useQuery(
-    "jobs",
-    getJobInfo
+    'jobs',
+    getJobInfo,
+    {
+      refetchOnWindowFocus: false,
+    }
   );
 
   if (certIsLoading || jobIsLoading) {
