@@ -14,17 +14,21 @@ const ResumeWrapper: React.FC = () => {
     data: certifications,
     isLoading: certIsLoading,
     error: certError,
-  } = useQuery('certifications', getCertificationsInfo, {
-    refetchOnWindowFocus: false,
-  });
-
-  const { data: jobs, isLoading: jobIsLoading, error: jobError } = useQuery(
-    'jobs',
-    getJobInfo,
+  } = useQuery<Certification[], Error>(
+    'certifications',
+    getCertificationsInfo,
     {
       refetchOnWindowFocus: false,
     }
   );
+
+  const {
+    data: jobs,
+    isLoading: jobIsLoading,
+    error: jobError,
+  } = useQuery<Job[], Error>('jobs', getJobInfo, {
+    refetchOnWindowFocus: false,
+  });
 
   if (certIsLoading || jobIsLoading) {
     return <LoadingSpinner />;

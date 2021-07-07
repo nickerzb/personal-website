@@ -1,9 +1,9 @@
-import React from "react";
-import Modal from "react-bootstrap/Modal";
-import Button from "react-bootstrap/Button";
-import { useSelector, useDispatch } from "react-redux";
-import { AppState } from "../../appReducers";
-import { CLOSE_MODAL } from "../redux/modal-actions";
+import React from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import { useSelector, useDispatch } from 'react-redux';
+import { AppState } from '../../appReducers';
+import { CLOSE_MODAL } from '../redux/modal-actions';
 
 const MyModal = () => {
   const state = useSelector((state: AppState) => state.modal);
@@ -11,8 +11,12 @@ const MyModal = () => {
 
   const closeModal = () =>
     dispatch({
-      type: CLOSE_MODAL
+      type: CLOSE_MODAL,
     });
+
+  if (!state.body) {
+    return null;
+  }
 
   return (
     <Modal
