@@ -7,13 +7,13 @@ import Container from 'react-bootstrap/Container';
 import LoadingSpinner from './common/components/loading-spinner';
 import Footer from './common/components/footer';
 import * as paths from './common/constants/routes';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import { QueryClient } from 'react-query';
 
 const Resume = lazy(() => import('./areas/resume/resume-wrapper'));
 const About = lazy(() => import('./areas/about/about'));
 // const Home = lazy(() => import("./areas/home/home"));
 const MyModal = lazy(() => import('./common/components/modal'));
-
+const QueryClientProvider = lazy(() => import('react-query').then(myModule => ({ default: myModule.QueryClientProvider })))
 const queryClient = new QueryClient();
 
 const App: React.FC = () => {
