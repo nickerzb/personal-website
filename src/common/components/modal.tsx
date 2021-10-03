@@ -19,17 +19,9 @@ const MyModal = () => {
   }
 
   return (
-    <Modal
-      show={state.open}
-      onHide={closeModal}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          {state.title}
-        </Modal.Title>
+    <Modal show={state.open} onHide={closeModal} size="lg" centered>
+      <Modal.Header>
+        <Modal.Title>{state.title}</Modal.Title>
       </Modal.Header>
       <Modal.Body>{state.body}</Modal.Body>
       <Modal.Footer>
