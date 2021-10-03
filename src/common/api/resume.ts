@@ -1,20 +1,8 @@
-const { CosmosClient } = require("@azure/cosmos");
-
-const endpoint = "https://personal-website-db.documents.azure.com/"; // Add your endpoint
-const key =
-  "pj8SpKm1HRA8PHpQ3d4qNXEUxcYjqUJ7d2HcKH0nU9F15P0POtjwgVyR8XP4PP1rViKHPfh0He1zegljWCbHpw=="; // Add the masterkey of the endpoint
-const client = new CosmosClient({ endpoint, key });
 
 export const getJobInfo = async (): Promise<Job[]> => {
-  const database = client.database("Personal-Website");
-  const container = database.container("Jobs");
 
-  const querySpec = {
-    query: "SELECT * from jobs"
-  };
-  const { resources: items } = await container.items
-    .query(querySpec)
-    .fetchAll();
+  const response = await fetch('https://personalwebite.blob.core.windows.net/personal-website-storage/jobs.json')
+  const items:Job[] = await response.json()
 
   const sorted = items.sort(
     (
@@ -27,23 +15,16 @@ export const getJobInfo = async (): Promise<Job[]> => {
     }
   );
 
-  return sorted as Job[];
+  return sorted;
 };
 
 export const getCertificationsInfo = async (): Promise<Certification[]> => {
-  const database = client.database("Personal-Website");
-  const container = database.container("Certifications");
+  const response = await fetch('https://personalwebite.blob.core.windows.net/personal-website-storage/certifications.json')
+  const items: Certification[] = await response.json()
 
-  const querySpec = {
-    query: "SELECT * from certifications"
-  };
-  const { resources: items } = await container.items
-    .query(querySpec)
-    .fetchAll();
-
-  const data = items.sort((a: { title: string }, b: { title: any }) =>
+  const sorted = items.sort((a: { title: string }, b: { title: any }) =>
     a.title.localeCompare(b.title)
   );
 
-  return data as Certification[];
+  return sorted;
 };

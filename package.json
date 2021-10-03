@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@azure/cosmos": "^3.11.5",
     "@iconify/icons-logos": "^1.1.10",
     "@iconify/react": "^1.1.4",
     "bootstrap": "^5.0.2",
